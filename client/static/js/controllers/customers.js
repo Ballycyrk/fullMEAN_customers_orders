@@ -3,7 +3,6 @@ ballyCyrk.controller('customersController', function(customerFactory){
   this.index = function(){
     customerFactory.index(function(data){
       _this.customers = data;
-      console.log(_this.customers);
     })
   }
   this.createCustomer = function(){

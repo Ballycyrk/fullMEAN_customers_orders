@@ -18,7 +18,6 @@ ballyCyrk.factory('customerFactory', function($http){
   factory.delete = function(customer, callback){
     $http.post('/destroy', customer).success(function(output){
       customers = output;
-      console.log('Delete Factory back from the Sever.');
       callback(customers);
     })
   };

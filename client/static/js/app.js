@@ -7,7 +7,7 @@ ballyCyrk.config(function($routeProvider){
     controller: 'customersController as UC'
   })
   .when('/orders', {
-    templateUrl: 'views/partials/_order.html',
+    templateUrl: './../views/partials/_order.html',
     controller: 'ordersController as OC'
   })
   .otherwise({ redirectTo: '/users'});

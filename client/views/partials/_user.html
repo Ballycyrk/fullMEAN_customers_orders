@@ -17,8 +17,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="customer in UC.customers">
-      <td ng-bind="customer.name">{{customers}}</td>
+    <tr ng-repeat="customer in UC.customers | filter : filter_name">
+      <td ng-bind="customer.name"></td>
       <td ng-bind="customer.date | date : format : longDate"></td>
       <td>
         <button class="btn btn-danger" ng-click="UC.deleteCustomer(customer)">Remove
@@ -28,4 +28,4 @@
   </tbody>
 </table>
 <hr>
-<a ng-if="!(customers.length == 0)" href="#/order">Go to Products and place Orders</a>
+<a ng-if="!(UC.customers.length == 0)" href="#/orders">Go to Products and place Orders</a>
