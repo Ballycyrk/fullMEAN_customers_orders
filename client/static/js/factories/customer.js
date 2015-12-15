@@ -7,6 +7,14 @@ ballyCyrk.factory('customerFactory', function($http){
       callback(customers);
     })
   };
+  factory.create = function(customer, callback){
+    customer.date = new Date();
+    console.log(customer);
+    $http.post('/create', customer).success(function(output){
+      customers = output;
+      callback(customers);
+    })
+  }
 
   return factory;
 });

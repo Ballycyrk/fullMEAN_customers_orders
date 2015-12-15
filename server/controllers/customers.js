@@ -13,6 +13,14 @@ module.exports  = {
     });
   },
   create: function(req, res){
-    console.log('CREATE USER:SERVER-CONTROL');
+    console.log(req.body)
+    customer = new Customer({ name: req.body.name, date: req.body.date });
+    customer.save(function(err){
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect('/customers');
+      }
+    })
   }
 }

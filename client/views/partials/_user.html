@@ -2,9 +2,9 @@
 <br>
 <form class="form-inline">
   <label>Customer Name:
-    <input class="form-control" type="text" ng-model="newCustomer.name" />
+    <input class="form-control" type="text" ng-model="UC.newCustomer.name" />
   </label>
-    <button class="btn btn-primary" ng-click="createCustomer()">Add</button>
+    <button class="btn btn-primary" ng-click="UC.createCustomer()">Add</button>
 </form>
 <hr>
 <input type="text" ng-model="filter_name" placeholder="search name..." />
@@ -17,11 +17,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="customer in customers">
-      <td ng-bind="customer.name"></td>
+    <tr ng-repeat="customer in UC.customers">
+      <td ng-bind="customer.name">{{customers}}</td>
       <td ng-bind="customer.date"></td>
       <td>
-        <button class="btn btn-warning" ng-click="deleteCustomer(customer)">Remove
+        <button class="btn btn-danger" ng-click="deleteCustomer(customer)">Remove
         </button>
       </td>
     </tr>
