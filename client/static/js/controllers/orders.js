@@ -10,8 +10,12 @@ ballyCyrk.controller('ordersController',
     customerFactory.index(function(data){ _this.customers = data });
   };
   this.index = function(callback){
-    orderFactory.index(function(data){ this.orders = data; })
+    orderFactory.index(function(data){ _this.orders = data; })
   };
+  this.createOrder = function(){
+    orderFactory.create(_this.newOrder, this.index);
+  };
+
   this.getProducts();
   this.getCustomers();
   this.index();

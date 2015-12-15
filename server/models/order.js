@@ -1,8 +1,10 @@
 var mongoose      = require('mongoose');
 var Schema        = mongoose.Schema;
 var OrderSchema   = new Schema (
-  { customer: Schema.Types.ObjectId,
-    product: Schema.Types.ObjectId
+  { customer: {type: Schema.Types.ObjectId, ref: 'Customer'},
+    product: Object,
+    quantity: Number,
+    date: Date
   });
 
 mongoose.model('Order', OrderSchema);

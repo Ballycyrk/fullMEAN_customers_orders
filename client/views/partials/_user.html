@@ -17,7 +17,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="customer in UC.customers | filter : filter_name">
+    <tr ng-repeat="customer in UC.customers | filter :{name: filter_name}">
       <td ng-bind="customer.name"></td>
       <td ng-bind="customer.date | date : format : longDate"></td>
       <td>

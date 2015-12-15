@@ -19,5 +19,25 @@
       <input class="form-control" type="number" ng-model="OC.newOrder.qty" />
     </label>
   </div>
-  <button type="submit" class="btn btn-success">Place Order</button>
+  <button type="submit" class="btn btn-success" ng-click="OC.createOrder()">Place Order</button>
 </form>
+<hr>
+<input type="text" ng-model="order_filter" placeholder="find order..." />
+<table class="table table-striped">
+  <thead>
+    <tr class="info">
+      <th>Customer Name</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="order in OC.orders | filter : order_filter">
+      <td ng-bind="order.customer.name"></td>
+      <td ng-bind="order.product.name"></td>
+      <td ng-bind="order.quantity"></td>
+      <td ng-bind="order.date | date : format : longDate" ></td>
+    </tr>
+  </tbody>
+</table>
