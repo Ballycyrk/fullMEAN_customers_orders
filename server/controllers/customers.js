@@ -22,5 +22,14 @@ module.exports  = {
         res.redirect('/customers');
       }
     })
+  },
+  delete: function(req, res){
+    Customer.remove({_id: req.body._id}, function(err){
+      if (err){
+        console.log(err);
+      } else {
+        res.redirect('/customers');
+      }
+    })
   }
 }

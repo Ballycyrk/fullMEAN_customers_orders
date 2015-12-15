@@ -10,6 +10,8 @@ ballyCyrk.controller('customersController', function(customerFactory){
     customerFactory.create(this.newCustomer, this.index);
     this.newCustomer = {};
   }
-
+  this.deleteCustomer = function(customer){
+    customerFactory.delete(customer, this.index);
+  }
   this.index();
 })
