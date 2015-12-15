@@ -33,7 +33,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="order in OC.orders | filter : order_filter">
+    <tr ng-repeat="order in OC.orders | orderFilter: order_filter">
       <td ng-bind="order.customer.name"></td>
       <td ng-bind="order.product.name"></td>
       <td ng-bind="order.quantity"></td>
