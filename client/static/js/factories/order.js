@@ -8,6 +8,8 @@ ballyCyrk.factory('orderFactory', function($http){
     })
   };
   factory.create = function(order, callback){
+    console.log('Order',order);
+    console.log('callback',callback);
     order.date = new Date;
     $http.post('/create/order', order).success(function(output){
       orders = output;
